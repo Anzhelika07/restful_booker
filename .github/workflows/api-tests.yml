@@ -5,6 +5,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -28,26 +29,12 @@ jobs:
       run: |
         pytest tests/ -v --alluredir=./allure-results
 
-    - name: Install Allure
+    - name: Download and setup Allure
       run: |
-        sudo apt-get update
-        sudo apt-get install -y allure
-
-    - name: Load test report history
-      uses: actions/checkout@v2
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages-history
-
-    - name: Prepare Allure history
-      if: always()
-      run: |
-        mkdir -p allure-results/history
-        if [ -d "gh-pages-history/history" ]; then
-          cp -r gh-pages-history/history allure-results/history/
-        fi
+        # Скачиваем Allure командной строки
+        wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+        tar -zxvf allure-2.27.0.tgz
+        echo "$(pwd)/allure-2.27.0/bin" >> $GITHUB_PATH
 
     - name: Generate Allure report
       if: always()
