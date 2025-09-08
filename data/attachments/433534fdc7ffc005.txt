@@ -1,0 +1,15 @@
+2025-09-08 21:04:11,631 - API_Logger - INFO - Request: GET https://restful-booker.herokuapp.com/auth
+2025-09-08 21:04:11,768 - API_Logger - INFO - Response: 200 - OK
+2025-09-08 21:04:11,768 - API_Logger - INFO - URL: https://restful-booker.herokuapp.com/auth
+2025-09-08 21:04:11,770 - API_Logger - INFO - Request: GET https://restful-booker.herokuapp.com/booking
+2025-09-08 21:04:11,823 - API_Logger - INFO - Response: 200 - OK
+2025-09-08 21:04:11,823 - API_Logger - INFO - URL: https://restful-booker.herokuapp.com/booking
+2025-09-08 21:04:11,824 - API_Logger - INFO - Request: GET https://restful-booker.herokuapp.com/booking/1503
+2025-09-08 21:04:11,884 - API_Logger - INFO - Response: 200 - OK
+2025-09-08 21:04:11,884 - API_Logger - INFO - URL: https://restful-booker.herokuapp.com/booking/1503
+2025-09-08 21:04:11,885 - API_Logger - INFO - Request: GET https://restful-booker.herokuapp.com/booking/1503
+2025-09-08 21:04:11,947 - API_Logger - INFO - Response: 200 - OK
+2025-09-08 21:04:11,947 - API_Logger - INFO - URL: https://restful-booker.herokuapp.com/booking/1503
+2025-09-08 21:04:11,950 - API_Logger - INFO - Request: GET https://restful-booker.herokuapp.com/booking/1503
+2025-09-08 21:04:12,004 - API_Logger - INFO - Response: 201 - Created
+2025-09-08 21:04:12,004 - API_Logger - INFO - URL: https://restful-booker.herokuapp.com/booking/1503
