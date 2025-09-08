@@ -4,12 +4,12 @@ INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/auth
 INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking
 INFO     API_Logger:logger.py:25 Response: 200 - OK
 INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking
-INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking/4816
+INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking/663
 INFO     API_Logger:logger.py:25 Response: 200 - OK
-INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking/4816
-INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking/4816
+INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking/663
+INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking/663
 INFO     API_Logger:logger.py:25 Response: 200 - OK
-INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking/4816
-INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking/4816
+INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking/663
+INFO     API_Logger:logger.py:17 Request: GET https://restful-booker.herokuapp.com/booking/663
 INFO     API_Logger:logger.py:25 Response: 201 - Created
-INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking/4816
+INFO     API_Logger:logger.py:26 URL: https://restful-booker.herokuapp.com/booking/663
