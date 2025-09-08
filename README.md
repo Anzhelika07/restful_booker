@@ -4,6 +4,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11-blue)
 ![Pytest](https://img.shields.io/badge/pytest-7.4.0-green)
 ![Allure Report](https://img.shields.io/badge/Allure-Report-orange)
+[![Run API Tests](https://img.shields.io/badge/Run-Tests-blue?style=for-the-badge)](https://github.com/OWNER/REPO/actions/workflows/api-tests.yml?query=workflow%3A"Run+API+Tests")
 
 ## Overview
 
