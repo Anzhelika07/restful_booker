@@ -1,0 +1,9 @@
+# Конфигурация Allure Report
+report:
+  language: en
+  exclude:
+    - .*\.json
+  logo:
+    enabled: true
+    url: https://restful-booker.herokuapp.com/img/logo.png
+  name: Restful Booker API Tests
