@@ -1,0 +1,7 @@
+requests==2.32.5
+pytest==8.4.2
+pydantic==2.11.7
+tenacity==8.2.3
+Faker==19.6.1
+allure-pytest==2.13.2
+pytest-xdist==3.3.1
