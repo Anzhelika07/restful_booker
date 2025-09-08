@@ -1,66 +1,66 @@
 name: Run API Tests
 
-on: [push] # Этот workflow запускается на каждый push
+on:
+  push:
+    branches:
+      - main
+      - master
+    branches-ignore:
+      - gh-pages
 
 jobs:
   test:
-    runs-on: ubuntu-latest # используем Ubuntu как runner
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          cache: 'pip'
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install allure-pytest
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install allure-pytest
+    - name: Run API tests
+      run: |
+        pytest tests/ -v --alluredir=./allure-results
 
-      - name: Run tests with pytest
-        continue-on-error: true
-        run: |
-          mkdir -p target
-          pytest tests/ -v --alluredir=target/allure-results
+    - name: Install Allure
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y allure
 
-      - name: Install Allure Commandline
-        run: |
-          sudo apt-get update
-          sudo apt-get install allure
+    - name: Load test report history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages-history
 
-      # Загружаем историю Allure Report из специальной ветки gh-pages
-      - name: Load test report history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
+    - name: Prepare Allure history
+      if: always()
+      run: |
+        mkdir -p allure-results/history
+        if [ -d "gh-pages-history/history" ]; then
+          cp -r gh-pages-history/history allure-results/history/
+        fi
 
-      - name: Build test report
-        uses: simple-elf/allure-report-action@v1.7
-        if: always()
-        with:
-          gh_pages: gh-pages
-          allure_history: allure-history
-          allure_results: target/allure-results
+    - name: Generate Allure report
+      if: always()
+      run: |
+        allure generate allure-results -o allure-report --clean
 
-      - name: Publish test report
-        uses: peaceiris/actions-gh-pages@v3
-        if: always()
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-report

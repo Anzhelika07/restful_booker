@@ -41,3 +41,7 @@ target/
 *.properties
 venv/
 .venv/
+*
+!.gitignore
+!allure-report/
+!index.html
