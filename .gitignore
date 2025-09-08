@@ -39,3 +39,5 @@ target/
 /gradlew.bat
 .todo
 *.properties
+venv/
+.venv/
