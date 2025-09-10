@@ -42,6 +42,16 @@ jobs:
       run: |
         allure generate allure-results -o allure-report --clean
 
+    # Загружаем историю Allure Report из специальной ветки gh-pages
+   # doc: https://allurereport.org/docs/integrations-github/
+    - name: Load test report history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+       ref: gh-pages
+       path: gh-pages
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: always()
