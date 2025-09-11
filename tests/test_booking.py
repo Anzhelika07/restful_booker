@@ -1,6 +1,6 @@
-import pytest
 import allure
-from models.request_models import BookingRequest, BookingDates
+import pytest
+
 from utils.data_generator import generate_booking_data
 
 
