@@ -1,3 +1,0 @@
-2025-09-11 13:41:13,341 - API_Logger - INFO - Request: GET https://restful-booker.herokuapp.com/booking
-2025-09-11 13:41:13,713 - API_Logger - INFO - Response: 200 - OK
-2025-09-11 13:41:13,713 - API_Logger - INFO - URL: https://restful-booker.herokuapp.com/booking
