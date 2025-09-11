@@ -52,13 +52,13 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-#      - name: Build test report
-#        uses: simple-elf/allure-report-action@v1.7
-#        if: always()
-#        with:
-#          gh_pages: gh-pages
-#          allure_history: allure-history
-#          allure_results: target/allure-results
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: target/allure-results
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
